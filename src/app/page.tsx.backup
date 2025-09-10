@@ -1,0 +1,740 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'SPLITTER - Split Music Into Studio-Quality Stems',
+  description: 'Extract bass, drums, vocals, and more from any YouTube track in minutes. Professional-quality stems powered by state-of-the-art AI. Only $3 per split.',
+  keywords: 'music stem separation, audio splitting, vocal isolation, drum extraction, bass isolation, AI music processing, Demucs',
+  openGraph: {
+    title: 'SPLITTER - Split Music Into Studio-Quality Stems',
+    description: 'Extract bass, drums, vocals, and more from any YouTube track in minutes. Professional-quality stems powered by state-of-the-art AI.',
+    type: 'website',
+  },
+};
+
+export default function HomePage() {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
+      {/* Navbar */}
+      <nav className="bg-white/80 backdrop-blur-lg border-b border-gray-200 dark:bg-gray-900/80 dark:border-gray-800 sticky top-0 z-50">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex h-16 justify-between">
+            <div className="flex">
+              <div className="flex flex-shrink-0 items-center">
+                <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
+                  SPLITTER
+                </h1>
+              </div>
+              <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
+                <a href="#" className="border-blue-500 text-gray-900 dark:text-white inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium transition-colors">
+                  Home
+                </a>
+                <a href="#how-it-works" className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 dark:text-gray-300 dark:hover:text-white inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium transition-colors">
+                  How it works
+                </a>
+                <a href="#pricing" className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 dark:text-gray-300 dark:hover:text-white inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium transition-colors">
+                  Pricing
+                </a>
+                <a href="#faq" className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 dark:text-gray-300 dark:hover:text-white inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium transition-colors">
+                  FAQ
+                </a>
+              </div>
+            </div>
+            <div className="hidden sm:ml-6 sm:flex sm:items-center">
+              <button
+                type="button"
+                className="rounded-full bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all"
+              >
+                Get Started
+              </button>
+            </div>
+            <div className="-mr-2 flex items-center sm:hidden">
+              <button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-inset dark:bg-gray-800 dark:text-gray-500 dark:hover:bg-gray-700">
+                <span className="sr-only">Open main menu</span>
+                <svg className="block h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <main>
+        {/* Hero Section */}
+        <section className="relative overflow-hidden min-h-[80vh] flex items-center justify-center">
+          {/* Animated background elements */}
+          <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
+            <div className="absolute top-0 left-1/4 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
+            <div className="absolute top-0 right-1/4 w-72 h-72 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
+            <div className="absolute bottom-0 left-1/2 w-72 h-72 bg-pink-400 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
+          </div>
+          
+          <div className="container-max py-20 sm:py-28">
+            <div className="mx-auto max-w-4xl text-center">
+              <div className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white/80 backdrop-blur-sm px-4 py-2 text-sm text-gray-600 shadow-lg dark:border-gray-700 dark:bg-gray-800/80">
+                <span className="h-2 w-2 rounded-full bg-green-500"></span>
+                Powered by AI • Demucs Technology
+              </div>
+              
+              <h1 className="mt-8 text-5xl font-bold tracking-tight sm:text-7xl lg:text-8xl">
+                <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent">
+                  Split Music Into
+                </span>
+                <br />
+                <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                  Studio Stems
+                </span>
+              </h1>
+              
+              <p className="mt-6 text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                Extract bass, drums, or vocals from any YouTube track in minutes. 
+                Professional-quality stems powered by state-of-the-art AI.
+              </p>
+
+              {/* Form will be handled by a client component */}
+              <div className="mt-10">
+                <form className="grid gap-4 sm:grid-cols-[1fr_auto] sm:gap-6">
+                  <input
+                    required
+                    type="url"
+                    inputMode="url"
+                    placeholder="Paste YouTube URL (https://...)"
+                    className="shadow-lg rounded-xl border-2 border-gray-200 px-6 py-4 text-lg focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-200/50 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:focus:border-blue-400 transition-all duration-200"
+                  />
+                  <button 
+                    type="submit" 
+                    className="rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 px-8 py-4 text-lg font-bold text-white shadow-xl hover:from-blue-700 hover:to-purple-700 focus:outline-none focus:ring-4 focus:ring-blue-500/50 transition-all duration-200"
+                  >
+                    Split Now →
+                  </button>
+                </form>
+
+                <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+                  <span className="text-sm text-gray-500 dark:text-gray-400 font-medium">Select stem type:</span>
+                  <div className="flex gap-2">
+                    <label className="flex items-center">
+                      <input type="radio" name="stem" value="bass" className="sr-only" />
+                      <span className="rounded-full px-6 py-2 text-sm font-semibold transition-all duration-200 shadow-lg cursor-pointer bg-white/80 dark:bg-gray-800/80 text-gray-700 dark:text-gray-300 border-2 border-gray-200 dark:border-gray-600 hover:border-blue-300 dark:hover:border-blue-500">
+                        Bass
+                      </span>
+                    </label>
+                    <label className="flex items-center">
+                      <input type="radio" name="stem" value="drums" className="sr-only" />
+                      <span className="rounded-full px-6 py-2 text-sm font-semibold transition-all duration-200 shadow-lg cursor-pointer bg-white/80 dark:bg-gray-800/80 text-gray-700 dark:text-gray-300 border-2 border-gray-200 dark:border-gray-600 hover:border-blue-300 dark:hover:border-blue-500">
+                        Drums
+                      </span>
+                    </label>
+                    <label className="flex items-center">
+                      <input type="radio" name="stem" value="vocals" defaultChecked className="sr-only" />
+                      <span className="rounded-full px-6 py-2 text-sm font-semibold transition-all duration-200 shadow-lg cursor-pointer bg-gradient-to-r from-blue-500 to-purple-500 text-white border-2 border-transparent">
+                        ● Vocals
+                      </span>
+                    </label>
+                  </div>
+                </div>
+
+                <div className="mt-6 text-sm text-gray-500 dark:text-gray-400">
+                  💰 Only $3 per split • ⚡ Results in 1-3 minutes • 🎵 Studio-quality output
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* How it Works */}
+        <section id="how-it-works" className="container-max pb-16 sm:pb-24">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">How it works</h2>
+            <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+              Simple, fast, and professional. Get studio-quality stems in just three easy steps.
+            </p>
+          </div>
+          <div className="grid gap-8 sm:grid-cols-3">
+            <div className="relative card bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300">
+              <div className="absolute -top-6 left-6 w-12 h-12 rounded-xl bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center text-white text-xl font-bold shadow-lg">
+                1
+              </div>
+              <div className="pt-8">
+                <div className="text-4xl mb-4">🔗</div>
+                <div className="text-xl font-bold mb-2">Paste link</div>
+                <p className="text-gray-600 dark:text-gray-300">Drop a YouTube URL of a song or mix.</p>
+              </div>
+            </div>
+            <div className="relative card bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300">
+              <div className="absolute -top-6 left-6 w-12 h-12 rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center text-white text-xl font-bold shadow-lg">
+                2
+              </div>
+              <div className="pt-8">
+                <div className="text-4xl mb-4">🎛️</div>
+                <div className="text-xl font-bold mb-2">Select stem</div>
+                <p className="text-gray-600 dark:text-gray-300">Choose Bass, Drums, or Vocals—one at a time.</p>
+              </div>
+            </div>
+            <div className="relative card bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300">
+              <div className="absolute -top-6 left-6 w-12 h-12 rounded-xl bg-gradient-to-r from-green-500 to-teal-500 flex items-center justify-center text-white text-xl font-bold shadow-lg">
+                3
+              </div>
+              <div className="pt-8">
+                <div className="text-4xl mb-4">⚡</div>
+                <div className="text-xl font-bold mb-2">Split</div>
+                <p className="text-gray-600 dark:text-gray-300">We process with Demucs and deliver your stem.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Pricing */}
+        <section id="pricing" className="container-max pb-16 sm:pb-24">
+          <div className="card bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-700 text-center border-2 border-blue-200 dark:border-gray-600 shadow-2xl">
+            <h2 className="text-3xl font-bold mb-3">Simple Pricing</h2>
+            <p className="text-gray-600 dark:text-gray-300 mb-8">Pay per split. No subscriptions, no hidden fees.</p>
+            
+            <div className="mb-8">
+              <div className="flex items-baseline justify-center gap-2 mb-4">
+                <span className="text-6xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">$3</span>
+                <span className="text-xl text-gray-600 dark:text-gray-300">per split</span>
+              </div>
+              <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-600 dark:text-gray-300">
+                <div className="flex items-center gap-1">
+                  <span className="text-green-500">✓</span>
+                  Studio-quality stems
+                </div>
+                <div className="flex items-center gap-1">
+                  <span className="text-green-500">✓</span>
+                  1-3 minute processing
+                </div>
+                <div className="flex items-center gap-1">
+                  <span className="text-green-500">✓</span>
+                  WAV format output
+                </div>
+              </div>
+            </div>
+
+            <button 
+              className="btn-primary bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-4 px-8 rounded-xl shadow-lg text-lg transition-all"
+              onClick={() => alert('Pricing CTA placeholder')}
+            >
+              Start Splitting Now →
+            </button>
+          </div>
+        </section>
+
+        {/* Why Splitter? */}
+        <section className="container-max pb-16 sm:pb-24">
+          <div className="mx-auto max-w-4xl text-center">
+            <h2 className="text-2xl font-semibold mb-4">Why Splitter?</h2>
+            <div className="grid gap-8 sm:grid-cols-3">
+              <div className="card">
+                <h3 className="font-semibold text-lg mb-2">Fast turnaround</h3>
+                <p className="text-gray-600 dark:text-gray-300">Get your stems in minutes, not hours. Our cloud pipeline is optimized for speed and reliability.</p>
+              </div>
+              <div className="card">
+                <h3 className="font-semibold text-lg mb-2">Studio-grade quality</h3>
+                <p className="text-gray-600 dark:text-gray-300">We use Demucs, a state-of-the-art AI model, to deliver clean, professional-quality stems for any genre.</p>
+              </div>
+              <div className="card">
+                <h3 className="font-semibold text-lg mb-2">No account required</h3>
+                <p className="text-gray-600 dark:text-gray-300">Try your first split without signing up. No hassle, no spam—just music.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* About */}
+        <section className="container-max pb-16 sm:pb-24">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="text-2xl font-semibold">About Splitter</h2>
+            <p className="mt-3 text-gray-600 dark:text-gray-300">
+              Splitter is a minimalist tool for creators and musicians. We use Demucs, a state-of-the-art
+              source separation model, to split songs into stems. Paste a link, choose a stem type, and you're done.
+            </p>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section id="faq" className="container-max pb-16 sm:pb-24">
+          <div className="mx-auto max-w-3xl">
+            <h2 className="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h2>
+            <div className="space-y-4">
+              <details className="card group bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300">
+                <summary className="font-semibold cursor-pointer group-open:text-blue-600 dark:group-open:text-blue-400 py-2 flex items-center justify-between">
+                  What is a stem?
+                  <span className="text-2xl text-blue-600">+</span>
+                </summary>
+                <p className="mt-3 text-gray-600 dark:text-gray-300 leading-relaxed">
+                  A stem is an isolated part of a song, such as vocals, drums, or bass. Splitter lets you extract one stem type from any track.
+                </p>
+              </details>
+              <details className="card group bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300">
+                <summary className="font-semibold cursor-pointer group-open:text-blue-600 dark:group-open:text-blue-400 py-2 flex items-center justify-between">
+                  How long does splitting take?
+                  <span className="text-2xl text-blue-600">+</span>
+                </summary>
+                <p className="mt-3 text-gray-600 dark:text-gray-300 leading-relaxed">
+                  Most splits are ready in 1–3 minutes, depending on song length and server load.
+                </p>
+              </details>
+              <details className="card group bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300">
+                <summary className="font-semibold cursor-pointer group-open:text-blue-600 dark:group-open:text-blue-400 py-2 flex items-center justify-between">
+                  What formats do you support?
+                  <span className="text-2xl text-blue-600">+</span>
+                </summary>
+                <p className="mt-3 text-gray-600 dark:text-gray-300 leading-relaxed">
+                  You can paste any public YouTube link. Output stems are delivered as high-quality WAV files.
+                </p>
+              </details>
+              <details className="card group bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300">
+                <summary className="font-semibold cursor-pointer group-open:text-blue-600 dark:group-open:text-blue-400 py-2 flex items-center justify-between">
+                  Is my data private?
+                  <span className="text-2xl text-blue-600">+</span>
+                </summary>
+                <p className="mt-3 text-gray-600 dark:text-gray-300 leading-relaxed">
+                  Yes. We process your audio securely and never share your files. All tracks are deleted after processing.
+                </p>
+              </details>
+              <details className="card group bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300">
+                <summary className="font-semibold cursor-pointer group-open:text-blue-600 dark:group-open:text-blue-400 py-2 flex items-center justify-between">
+                  Can I split multiple stem types at once?
+                  <span className="text-2xl text-blue-600">+</span>
+                </summary>
+                <p className="mt-3 text-gray-600 dark:text-gray-300 leading-relaxed">
+                  Currently, you can only select one stem type per split. To get multiple stems, you'll need to process the same song multiple times.
+                </p>
+              </details>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      {/* Footer */}
+      <footer className="border-t border-gray-200 dark:border-gray-800">
+        <div className="container-max py-10 text-sm text-gray-600 dark:text-gray-300 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <div>© {new Date().getFullYear()} Splitter. All rights reserved.</div>
+          <nav className="flex items-center gap-4">
+            <a href="#" className="hover:underline">Terms</a>
+            <a href="#" className="hover:underline">Privacy</a>
+            <a href="#" className="hover:underline">Contact</a>
+          </nav>
+        </div>
+      </footer>
+    </div>
+  );
+}
+      {/* Hero with modern animated background */}
+      <section className="relative overflow-hidden min-h-[80vh] flex items-center justify-center">
+        {/* Animated background elements */}
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
+          <motion.div
+            className="absolute top-0 left-1/4 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-30"
+            animate={{
+              x: [0, 100, 0],
+              y: [0, -100, 0],
+            }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+          />
+          <motion.div
+            className="absolute top-0 right-1/4 w-72 h-72 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-30"
+            animate={{
+              x: [0, -100, 0],
+              y: [0, 100, 0],
+            }}
+            transition={{
+              duration: 25,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+          />
+          <motion.div
+            className="absolute bottom-0 left-1/2 w-72 h-72 bg-pink-400 rounded-full mix-blend-multiply filter blur-xl opacity-30"
+            animate={{
+              x: [0, -100, 0],
+              y: [0, -50, 0],
+            }}
+            transition={{
+              duration: 30,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+          />
+        </div>
+        
+        <div className="container-max py-20 sm:py-28">
+          <motion.div
+            className="mx-auto max-w-4xl text-center"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+          >
+            <motion.div
+              className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white/80 backdrop-blur-sm px-4 py-2 text-sm text-gray-600 shadow-lg dark:border-gray-700 dark:bg-gray-800/80"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2, duration: 0.6, ease: "easeOut" }}
+            >
+              <motion.span 
+                className="h-2 w-2 rounded-full bg-green-500"
+                animate={{ scale: [1, 1.2, 1] }}
+                transition={{ duration: 2, repeat: Infinity }}
+              />
+              Powered by AI • Demucs Technology
+            </motion.div>
+            
+            <motion.h1
+              className="mt-8 text-5xl font-bold tracking-tight sm:text-7xl lg:text-8xl"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+            >
+              <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent">
+                Split Music Into
+              </span>
+              <br />
+              <motion.span 
+                className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.6, duration: 0.8 }}
+              >
+                Studio Stems
+              </motion.span>
+            </motion.h1>
+            
+            <motion.p
+              className="mt-6 text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8, duration: 0.7 }}
+            >
+              Extract bass, drums, vocals, and more from any YouTube track in minutes. 
+              Professional-quality stems powered by state-of-the-art AI.
+            </motion.p>
+
+            <motion.form
+              onSubmit={onSubmit}
+              className="mt-10 grid gap-4 sm:grid-cols-[1fr_auto] sm:gap-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.0, duration: 0.7 }}
+            >
+              <motion.input
+                required
+                type="url"
+                inputMode="url"
+                placeholder="Paste YouTube URL (https://...)"
+                className="shadow-lg rounded-xl border-2 border-gray-200 px-6 py-4 text-lg focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-200/50 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:focus:border-blue-400 transition-all duration-200"
+                value={url}
+                onChange={(e) => setUrl(e.target.value)}
+                whileFocus={{ scale: 1.02 }}
+                transition={{ duration: 0.2 }}
+              />
+              <motion.button 
+                type="submit" 
+                className="rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 px-8 py-4 text-lg font-bold text-white shadow-xl hover:from-blue-700 hover:to-purple-700 focus:outline-none focus:ring-4 focus:ring-blue-500/50 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
+                disabled={isLoading}
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ duration: 0.2 }}
+              >
+                {isLoading ? (
+                  <motion.div 
+                    className="flex items-center gap-2"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                  >
+                    <motion.div
+                      className="w-5 h-5 border-2 border-white border-t-transparent rounded-full"
+                      animate={{ rotate: 360 }}
+                      transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                    />
+                    Processing…
+                  </motion.div>
+                ) : (
+                  'Split Now →'
+                )}
+              </motion.button>
+            </motion.form>
+
+            <motion.div
+              className="mt-8 flex flex-wrap items-center justify-center gap-3"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.2, duration: 0.7 }}
+            >
+              <span className="text-sm text-gray-500 dark:text-gray-400 font-medium">Select stems:</span>
+              {(['bass', 'drums', 'vocals'] as const).map((k, index) => (
+                <motion.button
+                  key={k}
+                  type="button"
+                  onClick={() => toggleStem(k)}
+                  className={`rounded-full px-6 py-2 text-sm font-semibold transition-all duration-200 shadow-lg ${
+                    stems[k]
+                      ? 'bg-gradient-to-r from-blue-500 to-purple-500 text-white border-2 border-transparent'
+                      : 'bg-white/80 dark:bg-gray-800/80 text-gray-700 dark:text-gray-300 border-2 border-gray-200 dark:border-gray-600 hover:border-blue-300 dark:hover:border-blue-500'
+                  }`}
+                  whileHover={{ scale: 1.05, y: -1 }}
+                  whileTap={{ scale: 0.95 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ 
+                    delay: 1.4 + index * 0.1, 
+                    duration: 0.5,
+                    scale: { duration: 0.2 },
+                    y: { duration: 0.2 }
+                  }}
+                >
+                  {stems[k] && (
+                    <motion.span 
+                      className="inline-block mr-1"
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      ✓
+                    </motion.span>
+                  )}
+                  {k.charAt(0).toUpperCase() + k.slice(1)}
+                </motion.button>
+              ))}
+            </motion.div>
+
+            <motion.div
+              className="mt-6 text-sm text-gray-500 dark:text-gray-400"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.6, duration: 0.5 }}
+            >
+              💰 Only $3 per split • ⚡ Results in 1-3 minutes • 🎵 Studio-quality output
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* How it Works */}
+      <section id="how-it-works" className="container-max pb-16 sm:pb-24">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="text-3xl font-bold text-center mb-4">How it works</h2>
+          <p className="text-gray-600 dark:text-gray-300 text-center mb-12 max-w-2xl mx-auto">
+            Simple, fast, and professional. Get studio-quality stems in just three easy steps.
+          </p>
+        </motion.div>
+        <div className="grid gap-8 sm:grid-cols-3">
+          {[{
+            title: 'Paste link',
+            desc: 'Drop a YouTube URL of a song or mix.',
+            icon: '🔗',
+            gradient: 'from-blue-500 to-cyan-500'
+          }, {
+            title: 'Select stems',
+            desc: 'Choose Bass, Drums, or Vocals—mix and match.',
+            icon: '🎛️',
+            gradient: 'from-purple-500 to-pink-500'
+          }, {
+            title: 'Split',
+            desc: 'We process with Demucs and deliver your stems.',
+            icon: '⚡',
+            gradient: 'from-green-500 to-teal-500'
+          }].map((s, i) => (
+            <motion.div 
+              key={i} 
+              className="relative card bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: i * 0.2 }}
+              whileHover={{ y: -5, scale: 1.02 }}
+            >
+              <div className={`absolute -top-6 left-6 w-12 h-12 rounded-xl bg-gradient-to-r ${s.gradient} flex items-center justify-center text-white text-xl font-bold shadow-lg`}>
+                {i + 1}
+              </div>
+              <div className="pt-8">
+                <div className="text-4xl mb-4">{s.icon}</div>
+                <div className="text-xl font-bold mb-2">{s.title}</div>
+                <p className="text-gray-600 dark:text-gray-300">{s.desc}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* Pricing */}
+      <section id="pricing" className="container-max pb-16 sm:pb-24">
+        <motion.div 
+          className="card bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-700 text-center border-2 border-blue-200 dark:border-gray-600 shadow-2xl"
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <h2 className="text-3xl font-bold mb-3">Simple Pricing</h2>
+            <p className="text-gray-600 dark:text-gray-300 mb-8">Pay per split. No subscriptions, no hidden fees.</p>
+          </motion.div>
+          
+          <motion.div 
+            className="mb-8"
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            <div className="flex items-baseline justify-center gap-2 mb-4">
+              <span className="text-6xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">$3</span>
+              <span className="text-xl text-gray-600 dark:text-gray-300">per split</span>
+            </div>
+            <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-600 dark:text-gray-300">
+              <div className="flex items-center gap-1">
+                <span className="text-green-500">✓</span>
+                Studio-quality stems
+              </div>
+              <div className="flex items-center gap-1">
+                <span className="text-green-500">✓</span>
+                1-3 minute processing
+              </div>
+              <div className="flex items-center gap-1">
+                <span className="text-green-500">✓</span>
+                WAV format output
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.button 
+            className="btn-primary bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-4 px-8 rounded-xl shadow-lg text-lg"
+            onClick={(e) => { e.preventDefault(); alert('Pricing CTA placeholder'); }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            whileHover={{ scale: 1.05, y: -2 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Start Splitting Now →
+          </motion.button>
+        </motion.div>
+      </section>
+
+      {/* Why Splitter? (new section, more info) */}
+      <section className="container-max pb-16 sm:pb-24">
+        <div className="mx-auto max-w-4xl text-center">
+          <h2 className="text-2xl font-semibold mb-4">Why Splitter?</h2>
+          <div className="grid gap-8 sm:grid-cols-3">
+            <div className="card">
+              <h3 className="font-semibold text-lg mb-2">Fast turnaround</h3>
+              <p className="text-gray-600 dark:text-gray-300">Get your stems in minutes, not hours. Our cloud pipeline is optimized for speed and reliability.</p>
+            </div>
+            <div className="card">
+              <h3 className="font-semibold text-lg mb-2">Studio-grade quality</h3>
+              <p className="text-gray-600 dark:text-gray-300">We use Demucs, a state-of-the-art AI model, to deliver clean, professional-quality stems for any genre.</p>
+            </div>
+            <div className="card">
+              <h3 className="font-semibold text-lg mb-2">No account required</h3>
+              <p className="text-gray-600 dark:text-gray-300">Try your first split without signing up. No hassle, no spam—just music.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About */}
+      <section className="container-max pb-16 sm:pb-24">
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className="text-2xl font-semibold">About Splitter</h2>
+          <p className="mt-3 text-gray-600 dark:text-gray-300">
+            Splitter is a minimalist tool for creators and musicians. We use Demucs, a state-of-the-art
+            source separation model, to split songs into stems. Paste a link, choose stems, and you’re done.
+          </p>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section id="faq" className="container-max pb-16 sm:pb-24">
+        <motion.div 
+          className="mx-auto max-w-3xl"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            {[
+              {
+                question: "What is a stem?",
+                answer: "A stem is an isolated part of a song, such as vocals, drums, or bass. Splitter lets you extract these from any track."
+              },
+              {
+                question: "How long does splitting take?",
+                answer: "Most splits are ready in 1–3 minutes, depending on song length and server load."
+              },
+              {
+                question: "What formats do you support?",
+                answer: "You can paste any public YouTube link. Output stems are delivered as high-quality WAV files."
+              },
+              {
+                question: "Is my data private?",
+                answer: "Yes. We process your audio securely and never share your files. All tracks are deleted after processing."
+              },
+              {
+                question: "Can I split any song?",
+                answer: "You can split any song available on YouTube, as long as it's not restricted or private."
+              }
+            ].map((faq, index) => (
+              <motion.details 
+                key={index}
+                className="card group bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300" 
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ scale: 1.01 }}
+              >
+                <summary className="font-semibold cursor-pointer group-open:text-blue-600 dark:group-open:text-blue-400 py-2 flex items-center justify-between">
+                  {faq.question}
+                  <motion.span 
+                    className="text-2xl text-blue-600"
+                    animate={{ rotate: 0 }}
+                    whileHover={{ rotate: 180 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    +
+                  </motion.span>
+                </summary>
+                <motion.p 
+                  className="mt-3 text-gray-600 dark:text-gray-300 leading-relaxed"
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  transition={{ duration: 0.3 }}
+                >
+                  {faq.answer}
+                </motion.p>
+              </motion.details>
+            ))}
+          </div>
+        </motion.div>
+      </section>      {/* Footer */}
+      <footer className="border-t border-gray-200 dark:border-gray-800">
+        <div className="container-max py-10 text-sm text-gray-600 dark:text-gray-300 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <div>© {new Date().getFullYear()} Splitter. All rights reserved.</div>
+          <nav className="flex items-center gap-4">
+            <a href="#" className="hover:underline">Terms</a>
+            <a href="#" className="hover:underline">Privacy</a>
+            <a href="#" className="hover:underline">Contact</a>
+          </nav>
+        </div>
+      </footer>
+      </main>
+    </div>
+  );
+}
