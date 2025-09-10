@@ -178,7 +178,7 @@ export default function HomePage() {
             <h2 className="text-2xl font-semibold">About Splitter</h2>
             <p className="mt-3 text-gray-600 dark:text-gray-300">
               Splitter is a minimalist tool for creators and musicians. We use Demucs, a state-of-the-art
-              source separation model, to split songs into stems. Paste a link, choose a stem type, and you're done.
+              source separation model, to split songs into stems. Paste a link, choose a stem type, and you&apos;re done.
             </p>
           </div>
         </section>
@@ -230,7 +230,7 @@ export default function HomePage() {
                   <span className="text-2xl text-blue-600 group-open:rotate-45 transition-transform">+</span>
                 </summary>
                 <p className="mt-3 text-gray-600 dark:text-gray-300 leading-relaxed">
-                  Currently, you can only select one stem type per split. To get multiple stems, you'll need to process the same song multiple times.
+                  Currently, you can only select one stem type per split. To get multiple stems, you&apos;ll need to process the same song multiple times.
                 </p>
               </details>
             </div>

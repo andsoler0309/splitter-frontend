@@ -23,14 +23,15 @@ const Navbar = () => {
         return;
       }
 
-      // Find the current section based on scroll position
-      for (const section of sections.slice(1)) { // Skip home section
+      // Find the section that is currently in view
+      for (const section of sections) {
         const element = document.getElementById(section.id);
         if (element) {
-          const offsetTop = element.offsetTop;
-          const offsetBottom = offsetTop + element.offsetHeight;
+          const rect = element.getBoundingClientRect();
+          const elementTop = rect.top + window.scrollY;
+          const elementBottom = elementTop + rect.height;
 
-          if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
+          if (scrollPosition >= elementTop && scrollPosition < elementBottom) {
             setActiveSection(section.id);
             return;
           }
@@ -42,7 +43,7 @@ const Navbar = () => {
     handleScroll(); // Check initial position
 
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [sections]);
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
     e.preventDefault();
